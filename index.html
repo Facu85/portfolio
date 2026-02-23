@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - def__init__(It Solutions)</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Estilos para la sección de servicios con fondo */
+    #services {
+      background-image: url('assets/img/hero-img.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    #services::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Superposición oscura para legibilidad */
+      z-index: 1;
+    }
+
+    #services .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Estilos para el efecto Glassmorphism en las tarjetas de servicio */
+    .services .service-item {
+      background: rgba(255, 255, 255, 0.1); /* Reducimos opacidad para mejor efecto */
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+      /* Aseguramos que el texto sea legible */
+      color: rgba(255, 255, 255, 0.8); 
+    }
+
+    .services .service-item h3, .services .service-item p {
+      color: #ffffff; /* Color blanco para títulos y párrafos */
+    }
+
+    /* Estilos para los videos en el portafolio */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .portfolio-item .video-wrapper {
+      margin-bottom: 0;
+    }
+
+    /* Estilos para la sección de videos */
+    .videos {
+      background: #f8f9fa;
+    }
+
+    .video-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-info {
+      padding: 1.5rem;
+      background: #fff;
+      border-bottom: 3px solid #6b7280;
+      border-left: 1px solid #e5e7eb;
+      border-right: 1px solid #e5e7eb;
+    }
+
+    .video-info h4 {
+      margin-bottom: 0.5rem;
+      color: #012970;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .video-info p {
+      margin: 0;
+      color: #6c757d;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Estilos para hover en items de contacto */
+    .info-item {
+      transition: all 0.3s ease;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .info-item:hover {
+      background-color: #6b7280;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(107, 114, 128, 0.3);
+    }
+
+    .info-item:hover h3,
+    .info-item:hover p {
+      color: #ffffff;
+    }
+
+    .info-item i {
+      transition: color 0.3s ease;
+    }
+
+    .info-item:hover i {
+      color: #ffffff;
+    }
+
+  </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">def__init__(It Solutions)</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#home" class="active">Home<br></a></li>
+          <li><a href="#about">Acerca de mi</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#portfolio">Videos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-img.jpeg" alt="" data-aos="fade-in">
+      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+        <h2>Facundo Pineda</h2>
+        <p><span class="typed" data-typed-items="Analista de Sistemas, Desarrollador Web Full-Stack, UX/UI, Freelancer"></span></p>
+      </div>
+    </section>
+
+  
+    <section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-md-6">
+            <div class="row justify-content-between gy-4">
+              <div class="col-lg-5">
+                <img src="assets/img/profile-img.jpeg" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-7 about-info">
+                <p><strong>Nombre: </strong> <span>Facundo Pineda</span></p>
+                <p><strong>Perfil: </strong> <span>Desarrollador Web Full-Stack Python</span></p>
+                <p><strong>Email: </strong> <span>facupineda30@gmail.com</span></p>
+                <p><strong>Telefono: </strong> <span>3764877280</span></p>
+              </div>
+            </div>
+
+            <div class="skills-content skills-animation">
+              <h5>Skills</h5>
+              <div class="progress">
+                <span class="skill"><span>HTML</span> <i class="val">80%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill"><span>CSS</span> <i class="val">70%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill"><span>JavaScript</span> <i class="val">65%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill"><span>Python</span> <i class="val">85%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              
+              <div class="progress">
+                <span class="skill"><span>Django</span> <i class="val">85%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+               <div class="progress">
+                <span class="skill"><span>Modelado de Datos</span> <i class="val">94%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill"><span>Analisista de Sistemas / Funcional</span> <i class="val">94%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="about-me">
+              <h4>Acerca de mi</h4>
+              <p>
+                Como Analista de Sistemas, mi objetivo es transformar desafíos empresariales en soluciones tecnológicas eficientes. Me especializo en analizar, diseñar e implementar sistemas de información que optimizan procesos y satisfacen las necesidades específicas de cada cliente.
+              </p>
+              <p>
+                Actúo como el puente entre los usuarios y el equipo técnico, traduciendo requerimientos complejos en especificaciones claras. Mi objetivo es asegurar que la solución final no solo sea funcional, sino también intuitiva y escalable.
+              </p>
+              <p>
+                Esta base analítica complementa mi trabajo como desarrollador, permitiéndome crear aplicaciones robustas y bien fundamentadas que aportan un valor real y medible a cada proyecto.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    
+    <section id="resume" class="resume section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resumen</h2>
+        <p>Un resumen de mi trayectoria profesional y académica, destacando mi formación y experiencia en el desarrollo de soluciones tecnológicas.</p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Resumen</h3>
+            <div class="resume-item pb-0">
+              <h4>Facundo Pineda</h4>
+              <p><em>Analista de Sistemas y Desarrollador Full-Stack con una sólida capacidad para analizar problemas complejos y diseñar soluciones de software eficientes. Experiencia en el ciclo de vida completo del desarrollo, desde la recopilación de requisitos hasta la implementación y el mantenimiento.</em></p>
+              <ul>
+                <li>Posadas, Misiones, Argentina</li>
+                <li>3764877280</li>
+                <li>facupineda30@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Educación</h3>
+            <div class="resume-item">
+              <h4>Analista de Sistemas</h4>
+              <h5>2020 - 2022</h5>
+              <p><em>Instituto de Estudios Suiperiores Argentino (I.E.S.A), Posadas, Misiones</em></p>
+              <p>Formación integral en análisis, diseño, desarrollo e implementación de sistemas de 
+                información, con énfasis en la optimización de procesos de negocio.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Experiencia Profesional</h3>
+            <div class="resume-item">
+              <h4>Desarrollador Web Full-Stack / Analista de Sistemas</h4>
+              <h5>2024 - Presente</h5>
+              <p><em>Freelance</em></p>
+              <ul>
+                <li>2023 Sistema Pos (App de Escritorio) Minimercado Catriel y Caro .</li>
+                <li>2024 E-commerce Yerba Mate Amanecer.</li>
+                <li>2024 Landing page Indumentaria Cocoy.</li>
+                <li>2025 Guia Digital para la Provincia de Misiones contactos.net.ar.</li>
+                <li>2026 Fitness Gym, Sistema ERP(Enterprise Resource Planing), "Herramienta 
+                    modular escalable para la administración inteligente de gimnasios. Automatiza el 
+                    ciclo de vida completo del socio: desde el alta digital y la asignación de rutinas, 
+                    hasta el control de inventario y mantenimiento de maquinas y la apertura y cierre de caja diario. Una solución 
+                    robusta que transforma datos operativos en indicadores de rentabilidad (KPIs, Key Performance Indicators)." 
+                    Actualmente en desarrollo </li>
+                    
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="color :#e5e7eb">Servicios</h2>
+        <p style="color :#e5e7eb">Ofrezco soluciones tecnológicas, analizando y diseñando sistemas para optimizar 
+          procesos y mejorar la eficiencia de su negocio.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-clipboard-data"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Análisis de Requerimientos</h3>
+              </a>
+              <p>Traducción de las necesidades del negocio en especificaciones técnicas claras y detalladas para el desarrollo de software.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Diseño de Sistemas</h3>
+              </a>
+              <p>Creación de arquitecturas de software robustas y escalables que se alinean con los objetivos del cliente y la tecnología disponible.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Optimización de Procesos</h3>
+              </a>
+              <p>Análisis de flujos de trabajo actuales para identificar cuellos de botella y proponer mejoras a través de soluciones tecnológicas.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Desarrollo y Mantenimiento</h3>
+              </a>
+              <p>Creación de aplicaciones a medida y soporte continuo para asegurar su funcionamiento óptimo y su evolución futura.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-lightbulb"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Consultoría Tecnológica</h3>
+              </a>
+              <p>Asesoramiento estratégico para la adopción de nuevas tecnologías y la mejora de la infraestructura de T.I existente.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-book"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Documentación de Sistemas</h3>
+              </a>
+              <p>Elaboración de manuales técnicos y de usuario para facilitar la comprensión, el uso y el mantenimiento de los sistemas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Videos Section -->
+    <section id="portfolio" class="videos section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Demostraciones en Video</h2>
+        <p>Visualizá en acción algunos de mis proyectos más destacados a través de estas demostraciones en video.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 col-md-12 video-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="video-wrapper">
+              <video src="assets/videos/cocoy.mp4" class="img-fluid" controls poster="assets/img/portfolio/video-1-thumb.jpg"></video>
+            </div>
+            <div class="video-info">
+              <h4>Demostración de Landing Page</h4>
+              <p>Breve demostracion de una pagina para mostrar productos.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 video-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="video-wrapper">
+              <video src="assets/videos/pos.mp4" class="img-fluid" controls poster="assets/img/portfolio/video-2-thumb.jpg"></video>
+            </div>
+            <div class="video-info">
+              <h4>Sistema pos</h4>
+              <p>Sistema Pos App de escritorio.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 video-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="video-wrapper">
+              <video src="assets/videos/amanecer.mp4" class="img-fluid" controls poster="assets/img/portfolio/video-3-thumb.jpg"></video>
+            </div>
+            <div class="video-info">
+              <h4>E-commerce Yerba mate Amanecer</h4>
+              <p>Pequeña demostracion de un e-commerce.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 video-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="video-wrapper">
+              <video src="assets/videos/video-4.mp4" class="img-fluid" controls poster="assets/img/portfolio/video-4-thumb.jpg"></video>
+            </div>
+            <div class="video-info">
+              <h4>Integración de Sistemas</h4>
+              <p>Observa cómo se integran diferentes componentes de la solución para un funcionamiento cohesivo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="faq" class="faq section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>Preguntas </span><strong>Frecuentes</strong></h3>
+              <p>
+                Aquí encontrarás respuestas a las dudas más comunes sobre mi forma de trabajo, costos y tiempos de entrega.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3><span class="num">1.</span> <span>¿Cuál es tu proceso de desarrollo de software?</span></h3>
+                <div class="faq-content">
+                  <p>Mi proceso comienza con un análisis detallado de tus necesidades para definir los objetivos del proyecto. Luego, diseño la arquitectura y la interfaz de usuario, seguido por la fase de desarrollo y programación. Realizo pruebas exhaustivas para asegurar la calidad y finalmente despliego la solución, ofreciendo soporte posterior.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <h3><span class="num">2.</span> <span>¿Cómo se determinan los costos de un proyecto?</span></h3>
+                <div class="faq-content">
+                  <p>El costo varía según la complejidad, el alcance y las tecnologías requeridas. Tras nuestra reunión inicial, te proporcionaré una cotización detallada y transparente que desglosa todos los costos asociados, sin cargos ocultos. Mi objetivo es ofrecer una solución de gran valor que se ajuste a tu presupuesto.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <h3><span class="num">3.</span> <span>¿Cuánto tiempo tomará completar mi proyecto?</span></h3>
+                <div class="faq-content">
+                  <p>El tiempo de entrega depende del tamaño y la complejidad del proyecto. Una vez que definamos todos los requerimientos, estableceremos un cronograma realista con hitos claros. Me comprometo a cumplir con los plazos acordados, manteniéndote informado sobre el progreso en cada etapa.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <h3><span class="num">4.</span> <span>¿Ofreces mantenimiento y soporte después del lanzamiento?</span></h3>
+                <div class="faq-content">
+                  <p>Sí, ofrezco planes de mantenimiento y soporte para garantizar que tu aplicación funcione de manera óptima y segura a largo plazo. Esto puede incluir actualizaciones, monitoreo de rendimiento y solución de problemas. Podemos discutir un plan que se adapte a tus necesidades.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+
+              <div class="faq-item">
+                <h3><span class="num">5.</span> <span>¿Puedo solicitar cambios durante el desarrollo?</span></h3>
+                <div class="faq-content">
+                  <p>¡Por supuesto! Entiendo que los requisitos pueden evolucionar. Utilizo metodologías ágiles que permiten flexibilidad para incorporar cambios. Cualquier modificación se evaluará para determinar su impacto en el cronograma y el presupuesto, y procederemos con tu aprobación.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="contact" class="contact section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contacto</h2>
+        <p>¿Tenés una idea o un proyecto en mente? No dudes en contactarme. Estoy acá 
+          para ayudarte a transformar tus requerimientos en una solución funcional.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Ubicación</h3>
+                  <p>Posadas, Misiones, Argentina</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Teléfono</h3>
+                  <p>+54 3764877280</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>facupineda30@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer" style="background-color: #6b7280;">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p style="color: #000;">© <span>Copyright</span> <strong class="px-1 sitename">DevFolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="" style="color: #fff;"><i class="bi bi-github"></i></a>
+        <a href="" style="color: #fff;"><i class="bi bi-facebook"></i></a>
+        <a href="" style="color: #fff;"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        <p style="color: #000;">Designed by <a href="https://bootstrapmade.com/" style="color: #000;">BootstrapMade</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
