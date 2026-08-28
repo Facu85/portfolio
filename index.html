@@ -86,6 +86,78 @@
       object-fit: cover;
     }
 
+    /* Evitar que en pantalla completa se recorte o limite el tamaño del video */
+    .video-wrapper video:fullscreen {
+      max-height: none !important;
+      object-fit: contain !important;
+    }
+    .video-wrapper video:-webkit-full-screen {
+      max-height: none !important;
+      object-fit: contain !important;
+    }
+    .video-wrapper video:-moz-full-screen {
+      max-height: none !important;
+      object-fit: contain !important;
+    }
+    .video-wrapper video:-ms-fullscreen {
+      max-height: none !important;
+      object-fit: contain !important;
+    }
+
+    /* Estilos para el selector de videos con pestañas */
+    .video-wrapper.multi-video {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-wrapper video.gym-video {
+      display: none;
+    }
+
+    .video-wrapper video.gym-video.active {
+      display: block;
+    }
+
+    .video-tabs {
+      display: flex;
+      background: rgba(17, 24, 39, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px;
+      gap: 6px;
+      justify-content: space-around;
+      backdrop-filter: blur(5px);
+    }
+
+    .video-tab-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      flex: 1;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .video-tab-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .video-tab-btn.active {
+      color: #fff;
+      background: var(--accent-color, #0078ff);
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
     .portfolio-item .video-wrapper {
       margin-bottom: 0;
     }
@@ -338,7 +410,10 @@
                   2026 Colaboracion en sistema biometrico de reconocimiento facial, para el area de seguridad (consultar por privado para mas detalles).
                 </li>
                 <li>
-                  2026 En desarrollo actualmente web para Comunmunity manager y Social media, donde se da solucion a la agendas de citas 
+                  2026 En desarrollo actualmente web para Comunmunity manager y Social media, donde se da solucion a la agendas de citas. 
+                </li>
+                 <li>
+                  2026 En desarrollo actualmente, sistema de gestion de turnos para Peluqueria/Barberia, dando solucion a las agendas de turno y servicios. 
                 </li>
                     
               </ul>
@@ -474,12 +549,19 @@
           </div>
 
           <div class="col-lg-6 col-md-12 video-item" data-aos="fade-up" data-aos-delay="400">
-            <div class="video-wrapper">
-              <video src="assets/videos/video-4.mp4" class="img-fluid" controls poster="assets/img/portfolio/video-4-thumb.jpg"></video>
+            <div class="video-wrapper multi-video">
+              <video id="gym-video-1" src="assets/videos/gimnasio1.mp4" class="img-fluid gym-video active" controls poster="assets/img/portfolio/video-4-thumb.jpg"></video>
+              <video id="gym-video-2" src="assets/videos/gimnasio2.mp4" class="img-fluid gym-video" controls poster="assets/img/portfolio/video-4-thumb.jpg"></video>
+              <video id="gym-video-3" src="assets/videos/gimnasio3.mp4" class="img-fluid gym-video" controls poster="assets/img/portfolio/video-4-thumb.jpg"></video>
+              <div class="video-tabs">
+                <button class="video-tab-btn active" onclick="switchVideo(1, this)">Control de Acceso</button>
+                <button class="video-tab-btn" onclick="switchVideo(2, this)">Gestión de Abonos</button>
+                <button class="video-tab-btn" onclick="switchVideo(3, this)">Asignación de Rutinas</button>
+              </div>
             </div>
             <div class="video-info">
-              <h4>Integración de Sistemas</h4>
-              <p>Observa cómo se integran diferentes componentes de la solución para un funcionamiento cohesivo.</p>
+              <h4>Sistema para Gimnasios</h4>
+              <p>Aca se resuelven muchos problemas de los gimansios, como el control de acceso, la gestion de abonos y la asignacion de rutinas y mas.</p>
             </div>
           </div>
         </div>
@@ -633,6 +715,35 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Script para alternar videos en el portafolio -->
+  <script>
+    function switchVideo(videoNum, btn) {
+      // Detener y ocultar todos los videos de este wrapper
+      const wrapper = btn.closest('.video-wrapper');
+      const videos = wrapper.querySelectorAll('.gym-video');
+      videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0; // Reiniciar video
+        video.classList.remove('active');
+      });
+
+      // Mostrar el video seleccionado
+      const targetVideo = wrapper.querySelector('#gym-video-' + videoNum);
+      if (targetVideo) {
+        targetVideo.classList.add('active');
+      }
+
+      // Desactivar todos los botones de esta barra de pestañas
+      const buttons = wrapper.querySelectorAll('.video-tab-btn');
+      buttons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      // Activar el botón presionado
+      btn.classList.add('active');
+    }
+  </script>
 
 </body>
 
